@@ -1,4 +1,4 @@
-import threading 
+from multiprocessing import Process 
 import time 
 
 
@@ -16,8 +16,8 @@ def print_numbers():
 
 if __name__ == "__main__":
     start_time = time.time()
-    t1 = threading.Thread(target=print_alphabets)
-    t2 = threading.Thread(target=print_numbers)
+    t1 = Process(target=print_alphabets)
+    t2 = Process(target=print_numbers)
 
     t1.start()
     t2.start()
